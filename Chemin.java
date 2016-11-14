@@ -38,6 +38,7 @@ public class Chemin {
                 if (robot.deplacementPossible(dir)) {
                     System.out.println("DEPLACEMENT POSSIBLE -> (" + robot.getLigne() + ";" + robot.getColonne() + ")");
                     dateCour++;
+                    
                     robot.deplacer(dir);
                     EvenementDeplacementRobot cheminElementaire = new EvenementDeplacementRobot(dateDebut, robot, dir);
                     this.chemin.add(cheminElementaire);
