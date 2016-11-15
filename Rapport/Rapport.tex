@@ -18,6 +18,8 @@
 \usepackage{graphicx}
 \usepackage{listings}
 
+\usepackage{array}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{eurosym}
@@ -44,9 +46,52 @@
 
 %\part{Introduction}
 
-\chapter{Objectif}
+\chapter{Première partie : les données du problème}
 
+La première partie du TP, correspond en la réalisation des classes Java représentant le problème et du simulateur. \\
 
+Nous avons séparé les entités en trois packages. \\
+
+\begin{tabular}{|c|c|}
+	\hline Package & Robot \\
+	\hline \hline 
+	classes & Drone \\
+			& Robot \\
+			& RobotAChenilles \\
+			& RobotAPattes \\
+			& RobotAroues \\
+			& RobotReservoir \\
+			& RobotTerrestre \\
+	\hline \hline
+	Package & Géographie \\
+	\hline \hline
+	classes & Carte \\
+			& Case \\
+			& EnumDirection \\
+			& EnumNatureTerrain \\
+			& Incendie \\
+	\hline \hline
+	Package & Simulation \\
+	\hline \hline
+	classes & DonneesSimulation \\
+			& Simulateur \\
+	\hline \hline
+	Package & io \\
+	\hline \hline
+	classes & LecteurDonnees \\
+	\hline
+\end{tabular} \\
+
+\section{Package Robot}
+Le package Robot contient la classe abstraite Robot ainsi que toutes les classes l'implémentant. \\ 
+
+Nous avons cherché à optimiser l'implémentation des sous-classes de Robot en factorisant le plus possible. \\ 
+
+Les classes Drone, RobotAChenilles et RobotAroues ont la particularité d'avoir un réservoir contrairement à RobotAPattes. Nous les avons donc leurs points communs dans une classe abstraire RobotReservoir fille de Robot. \\
+
+RobotAChenilles et RobotAroues sont différend de Drone, Ils ont une diminution de la vitesse en rapport à la Case où ils se situent et ne vident pas leur réservoir de la même façon de Drone. Nous avons regroupé leurs points communs dans une sous-classe abstraire RobotTerrestre fille de RobotReservoir. \\
+
+Le diagramme UML correspondant du package Robot est le suivant \\
 \end{document}
 
 
